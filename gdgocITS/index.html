@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDGoC ITS - Web Foundations Workshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode"> <header class="hero-section">
+        <div class="header-content">
+            <h1>GDGoC ITS – Web Foundations Workshop</h1>
+            <p>Learn HTML, CSS, and JavaScript by building a real-mini project</p>
+        </div>
+        <div class="toggle-container">
+            <span>Dark/Light Mode</span>
+            <input type="checkbox" id="mode-toggle">
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="left-column">
+            <section class="card about-card">
+                <div class="card-header">
+                    <h2>About the Event</h2>
+                    <span class="logo-text">GDG</span>
+                </div>
+                <p>In this session, we will learn web fundamentals and build a small event registration using HTML, CSS, and JavaScript.</p>
+                <p>For now we will learn about the front end first.</p>
+            </section>
+
+            <section class="card topics-card">
+                <h2>Topics Covered</h2>
+                <ul>
+                    <li><strong>HTML:</strong> basic structure and semantic elements</li>
+                    <li><strong>CSS:</strong> selectors, layout, and styling</li>
+                    <li><strong>JavaScript:</strong> DOM, events, functions, and arrays</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <section class="card registration-card">
+                <h2>Event Registration</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Experience Level</label>
+                        <select>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="wa-group">
+                        <label for="wa-group">Join WhatsApp group 📞🟢</label>
+                    </div>
+                    <button type="submit" class="btn-register">Register</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <section class="container table-section">
+        <div class="card table-card">
+            <div class="table-header">
+                <h2>Registered Participants</h2>
+                <span class="live-update">🔄 Live data updates</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                        <th>Gakartor (Location)</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="participantList">
+                    <tr>
+                        <td>👤</td>
+                        <td>Rama</td>
+                        <td>Deixora Indonesian</td>
+                        <td>sample.f10@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>👤</td>
+                        <td>Andrar Nam</td>
+                        <td>Tanana Indonesia</td>
+                        <td>sampleh@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>
