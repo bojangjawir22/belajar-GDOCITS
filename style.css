@@ -117,29 +117,40 @@ body.light-mode select {
     border: 1px solid #ccc;
 }
 
-/* Media Query untuk HP (Layar di bawah 768px) */
+
+/* --- MEDIA QUERY UNTUK TAMPILAN HP --- */
 @media (max-width: 768px) {
+    /* 1. Ubah container dari 2 kolom menjadi 1 kolom saja */
     .container {
-        /* Ubah grid dari 2 kolom menjadi 1 kolom saja */
         grid-template-columns: 1fr; 
-        margin: 15px auto;
         padding: 0 15px;
+        margin: 20px auto;
     }
 
-    .hero-section {
-        padding: 30px 15px;
+    /* 2. Sesuaikan ukuran font header agar tidak terlalu besar di HP */
+    .hero-section h1 {
+        font-size: 1.5rem;
     }
 
-    h1 {
-        font-size: 1.5rem; /* Perkecil ukuran judul agar tidak tumpuk */
+    /* 3. Beri jarak antar card saat menumpuk secara vertikal */
+    .left-column, .right-column {
+        width: 100%;
     }
 
-    /* Agar tabel bisa di-scroll secara horizontal jika kolomnya terlalu panjang */
-    .table-card {
-        overflow-x: auto;
+    /* 4. Solusi agar Tabel tidak pecah/terpotong di layar sempit */
+    .card.table-card {
+        overflow-x: auto; /* Munculkan scroll horizontal jika tabel kepanjangan */
+        -webkit-overflow-scrolling: touch;
     }
 
     table {
-        min-width: 500px; /* Memastikan tabel punya ruang minimum */
+        min-width: 500px; /* Memastikan kolom tabel punya ruang cukup */
+    }
+
+    /* 5. Atur posisi tombol toggle agar lebih rapi di HP */
+    .toggle-container {
+        position: static;
+        margin-top: 15px;
+        display: block;
     }
 }
