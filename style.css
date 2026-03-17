@@ -117,3 +117,29 @@ body.light-mode select {
     border: 1px solid #ccc;
 }
 
+/* Media Query untuk HP (Layar di bawah 768px) */
+@media (max-width: 768px) {
+    .container {
+        /* Ubah grid dari 2 kolom menjadi 1 kolom saja */
+        grid-template-columns: 1fr; 
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    .hero-section {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Perkecil ukuran judul agar tidak tumpuk */
+    }
+
+    /* Agar tabel bisa di-scroll secara horizontal jika kolomnya terlalu panjang */
+    .table-card {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 500px; /* Memastikan tabel punya ruang minimum */
+    }
+}
