@@ -1,12 +1,11 @@
-// --- 1. LOGIKA UNTUK DARK/LIGHT MODE ---
-
-// Kita ambil elemen checkbox berdasarkan ID-nya
+// Ambil elemen
 const modeToggle = document.getElementById('mode-toggle');
+const registrationForm = document.getElementById('registrationForm');
+const participantList = document.getElementById('participantList');
 
+// 1. Logika Mode Gelap/Terang
 modeToggle.addEventListener('change', function() {
-    // Jika checkbox dicentang, kita ubah class di body
     if (this.checked) {
-        // Kita gunakan class "light-mode" (nanti tambahkan sedikit di CSS)
         document.body.classList.add('light-mode');
         document.body.classList.remove('dark-mode');
     } else {
@@ -15,26 +14,17 @@ modeToggle.addEventListener('change', function() {
     }
 });
 
-
-// --- 2. LOGIKA UNTUK PENDAFTARAN (FORM) ---
-
-const registrationForm = document.getElementById('registrationForm');
-const participantList = document.getElementById('participantList');
-
+// 2. Logika Form Pendaftaran
 registrationForm.addEventListener('submit', function(event) {
-    // Mencegah halaman refresh saat tombol submit diklik
-    event.preventDefault();
+    event.preventDefault(); // Stop halaman refresh
 
-    // Mengambil nilai dari setiap input di dalam form
-    // Kita gunakan querySelector untuk mengambil input berdasarkan tipe atau urutannya
+    // Ambil input
     const fullName = registrationForm.querySelector('input[type="text"]').value;
     const email = registrationForm.querySelector('input[type="email"]').value;
     const experience = registrationForm.querySelector('select').value;
 
-    // Membuat baris baru (tr) untuk tabel
+    // Buat baris baru
     const newRow = document.createElement('tr');
-
-    // Mengisi baris baru dengan data yang diambil (td)
     newRow.innerHTML = `
         <td>👤</td>
         <td>${fullName}</td>
@@ -42,13 +32,10 @@ registrationForm.addEventListener('submit', function(event) {
         <td>${email}</td>
     `;
 
-    // Memasukkan baris baru ke dalam tabel (tbody)
+    // Masukkan ke tabel
     participantList.appendChild(newRow);
 
-    // Reset atau kosongkan form setelah berhasil mendaftar
+    // Reset form
     registrationForm.reset();
-
-    // Beri notifikasi kecil
-    alert('Registrasi Berhasil! Nama ' + fullName + ' sudah masuk ke tabel.');
+    alert('Berhasil Daftar!');
 });
-
